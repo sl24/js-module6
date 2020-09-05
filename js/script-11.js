@@ -32,10 +32,16 @@ const secondArray = [160, 3, 1719, 19, 11, 13, -21];
 //   }
 // }
 
+// function findOutlier(integers) {
+//   const even = integers.filter((a) => a % 2 == 0);
+//   const odd = integers.filter((a) => a % 2 !== 0);
+//   return even.length == 1 ? even[0] : odd[0];
+// }
+
 function findOutlier(integers) {
-  const even = integers.filter((a) => a % 2 == 0);
-  const odd = integers.filter((a) => a % 2 !== 0);
-  return even.length == 1 ? even[0] : odd[0];
+  return integers.filter((a) => a % 2 == 0).length == 1
+    ? integers.filter((a) => a % 2 == 0)[0]
+    : integers.filter((a) => a % 2 !== 0)[0];
 }
 
 console.log(findOutlier(firstArray));
